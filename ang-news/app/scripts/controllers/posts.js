@@ -3,7 +3,7 @@
  */
 'use strict';
 
-app.controller('PostsCtrl', function ($scope){
+app.controller('PostsCtrl', function ($scope, Post){
   $scope.post = {url: 'http://', title: ''};
   $scope.posts = [];
 
