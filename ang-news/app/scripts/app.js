@@ -16,7 +16,8 @@ var app = angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'firebase'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -31,4 +32,5 @@ var app = angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+  .constant('FIREBASE_URL', 'https://burning-inferno-4122.firebaseio.com');

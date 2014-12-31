@@ -12,10 +12,11 @@
   <input type="submit" value="Add Post"/>
 </form>
 <!--Posts: {{ posts }}<br>-->
-Post: {{ post }}
+<!--Post: {{ post }}-->
 <div ng-repeat="(postId, post) in posts">
   <a ng-href="{{ post.url }}">{{ post.title }}</a> &nbsp;
   <button ng-click="deletePost(postId)">Delete</button>
 </div>
 </body>
 </html>
+
