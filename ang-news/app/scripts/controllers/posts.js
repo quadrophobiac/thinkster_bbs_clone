@@ -3,7 +3,7 @@
  */
 'use strict';
 
-app.controller('PostsCtrl', function ($scope, Post){
+app.controller('PostsCtrl', function ($scope, $location, Post){
 
   $scope.posts = Post.all;
   // do not know why this order is suddenly changed
