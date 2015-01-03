@@ -8,15 +8,16 @@ app.factory('Auth', function ($firebaseSimpleLogin, FIREBASE_URL, $rootScope){
   var auth;
 
   var Auth = {
-    register,
-    login,
-    logout,
-    resolveUser,
-    signedIn,
-    user
+    register: function(user){},
+    login: function(user){},
+    logout: function(){},
+    resolveUser: function(){},
+    signedIn: function(){},
+    user: {}
   };
 
-  $rootScope.$on('', function(){});
+  $rootScope.$on('$firebaseSimpleLogin:login', function(e, user){});
+  $rootScope.$on('$firebaseSimpleLogin:logout', function(){});
 
   return Auth;
 });
