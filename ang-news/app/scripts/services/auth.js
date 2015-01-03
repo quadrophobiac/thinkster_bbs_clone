@@ -4,8 +4,8 @@
 'use strict';
 
 app.factory('Auth', function ($firebaseSimpleLogin, FIREBASE_URL, $rootScope){
-  var ref;
-  var auth;
+  var ref = new Firebase(FIREBASE_URL);
+  var auth = $firebaseSimpleLogin(ref);
 
   var Auth = {
     register: function(user){
@@ -26,8 +26,13 @@ app.factory('Auth', function ($firebaseSimpleLogin, FIREBASE_URL, $rootScope){
     user: {}
   };
 
-  $rootScope.$on('$firebaseSimpleLogin:login', function(e, user){});
-  $rootScope.$on('$firebaseSimpleLogin:logout', function(){});
+  $rootScope.$on('$firebaseSimpleLogin:login', function(e, user){
+    console.log('logged in');
+  });
+  $rootScope.$on('$firebaseSimpleLogin:logout', function(){
+    console.log('logged out');
+    angular.copy({}, Auth.user);
+  });
 
   return Auth;
 });
