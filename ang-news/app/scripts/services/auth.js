@@ -21,6 +21,8 @@ app.factory('Auth', function ($firebaseSimpleLogin, FIREBASE_URL, $rootScope){
       return auth.$getCurrentUser();
     },
     signedIn: function(){
+      console.log('signed in function executing');
+      console.log(Auth.user.provider);
       return !!Auth.user.provider;
     },
     user: {}
@@ -28,6 +30,7 @@ app.factory('Auth', function ($firebaseSimpleLogin, FIREBASE_URL, $rootScope){
 
   $rootScope.$on('$firebaseSimpleLogin:login', function(e, user){
     console.log('logged in');
+    angular.copy(user, Auth.user);
   });
   $rootScope.$on('$firebaseSimpleLogin:logout', function(){
     console.log('logged out');
