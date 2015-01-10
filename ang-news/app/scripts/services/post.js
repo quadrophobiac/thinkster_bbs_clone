@@ -10,7 +10,9 @@ app.factory('Post', function ($firebase, FIREBASE_URL){
   var Post = {
     all: posts,
     create: function(post){
-      return posts.$add(post); // this returns a promise
+      return posts.$add(post).then(function(postRef){
+        $firebase(ref.child('user_posts').child(post.creatorUID).$push(postRef.name()));
+      }); // this returns a promise
     },
     get: function(postId) {
       return $firebase(ref.child('posts')).$asObject();
