@@ -17,6 +17,6 @@ app.controller('NavCtrl', function($scope, $location, Post, Auth){
     Post.create($scope.post).then(function(ref){
       $location.path('/posts/' + ref.name());
       $scope.post = {url: 'http://', title: ''};
-    })
+    });
   };
 });
