@@ -12,6 +12,7 @@ app.controller('NavCtrl', function($scope, $location, Post, Auth){
   $scope.submitPost = function (){
 
     $scope.post.creator = $scope.user.profile.username;
+    // means that earlier posts created with non username attributed users will break code
     $scope.post.creatorUID = $scope.user.uid;
 
     Post.create($scope.post).then(function(ref){
