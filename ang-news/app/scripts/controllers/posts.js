@@ -4,7 +4,7 @@
 'use strict';
 
 app.controller('PostsCtrl', function ($scope, $location, Post, Auth){
-
+  // Auth service injected into Posts controller in order to control deletion via uid
   $scope.posts = Post.all;
   $scope.user = Auth.user;
   // do not know why this order is suddenly changed
