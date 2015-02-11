@@ -33,10 +33,14 @@
 
         <div class="cmt-form">
           <div ng-hide="signedIn()">
-            <p></p>
+            <p><a href="#/login">Sign in</a> to post a comment </p>
           </div>
-          <form ng-show="" ng-submit="">
-            <textarea />
+          <form ng-show="" ng-submit="addComment()">
+            <textarea
+              ng-model="commentText"
+              placeholder="Post a Comment"
+              class="form-control"></textarea><br />
+            <input class="btn btn-primary" type="submit" value="Post Comment">
           </form>
         </div>
 
