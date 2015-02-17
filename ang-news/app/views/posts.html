@@ -20,32 +20,8 @@
       <div>
         <span>submitted by <a ng-href="#/users/{{ post.creatorUID }}">{{ post.creator }}</a></span>
         &mdash;
-        <a ng-click="deletePost(post)" ng-show="user.uid === post.creatorUID">delete</a>
-        <!--<a ng-href="#/posts/{{ post.$id }}">comments</a>-->
-        <div class="row cmt" ng-repeat="comment in comments">
-          <div class="col-md-12">
-            <p>{{ comment.text }}</p>
-            <p class="author">posted by
-              <a ng-href="#/users/{{ comment.creatorUID }}"> {{ comment.creator }} </a>
-            </p>
-          </div>
-        </div>
-
-        <div class="cmt-form">
-          <div ng-hide="signedIn()">
-            <p><a href="#/login">Sign in</a> to post a comment</p>
-          </div>
-
-          <form ng-show="signedIn()" ng-submit="addComment()">
-      <textarea
-        ng-model="commentText"
-        placeholder="Post a Comment"
-        class="form-control"></textarea><br />
-            <input type="submit" value="Post Comment" class="btn btn-primary" />
-          </form>
-        </div>
-
-
+        <a ng-href="#/posts/{{ post.$id }}">comments</a>
+        <a ng-click="deletePost(post)">delete</a>
       </div>
     </div>
   </div>

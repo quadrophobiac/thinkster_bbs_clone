@@ -17,6 +17,7 @@ app.factory('Post', function ($firebase, FIREBASE_URL){
       });
     },
     get: function (postId) {
+      console.log("this is the ID i got: "+postId)
       return $firebase(ref.child('posts')).$asObject();
     },
     delete: function(post){

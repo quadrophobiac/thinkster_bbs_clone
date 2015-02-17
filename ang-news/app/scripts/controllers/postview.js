@@ -4,10 +4,13 @@
 'use strict';
 
 app.controller('PostViewCtrl', function($scope, $routeParams, Post, Auth){
+
   $scope.post = Post.get($routeParams.postId);
-  console.log($scope.post);
+  // routeParams returns the name of the database entry in Firebase
+  // this id is being passed to the Post service, and its method
   $scope.comments = Post.comments($routeParams.postId);
   console.log($scope.comments);
+
   $scope.user = Auth.user;
   $scope.signedIn = Auth.signedIn;
   console.log("on a page controlled by PostViewCtrl");
