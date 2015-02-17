@@ -44,8 +44,8 @@ app.factory('Auth', function ($firebase, $firebaseSimpleLogin, FIREBASE_URL, $ro
     angular.copy(user, Auth.user);
     Auth.user.profile = $firebase(ref.child('profile').child(Auth.user.uid)).$asObject();
     // $asObject creates a dynamic link to the profile - which I infer as an open socket to read-write the DB
-    console.log(Auth.user);
-    console.log(Auth.signedIn());
+    //console.log(Auth.user);
+    //console.log(Auth.signedIn());
   });
   $rootScope.$on('$firebaseSimpleLogin:logout', function(){
     console.log('logged out');

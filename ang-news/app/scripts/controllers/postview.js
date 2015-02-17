@@ -9,6 +9,7 @@ app.controller('PostViewCtrl', function($scope, $routeParams, Post, Auth){
 
   $scope.user = Auth.user;
   $scope.signedIn = Auth.signedIn;
+  console.log("on a page controlled by PostViewCtrl");
 
   $scope.addComment = function(){
     if(!$scope.commentText || $scope.commentText === ''){

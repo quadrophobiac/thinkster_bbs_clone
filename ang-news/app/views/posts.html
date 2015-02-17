@@ -32,11 +32,11 @@
         </div>
 
         <div class="cmt-form">
-          <!--<div ng-hide="signedIn()">-->
-            <!--<p><a href="#/login">Sign in</a> to post a comment</p>-->
-          <!--</div>-->
+          <div ng-hide="signedIn()">
+            <p><a href="#/login">Sign in</a> to post a comment</p>
+          </div>
 
-          <form  ng-submit="addComment()">
+          <form ng-show="signedIn()" ng-submit="addComment()">
       <textarea
         ng-model="commentText"
         placeholder="Post a Comment"
