@@ -17,13 +17,16 @@ app.factory('Post', function ($firebase, FIREBASE_URL){
       });
     },
     get: function (postId) {
-      console.log("this is the ID i got: "+postId)
-      return $firebase(ref.child('posts')).$asObject();
+      //console.log(postId);
+      //console.log($firebase(ref.child('posts')).$asObject());
+      //console.log("wakka wakka");
+      //console.log($firebase(ref.child('posts').child(postId)).$asObject());
+      return $firebase(ref.child('posts').child(postId)).$asObject();
     },
     delete: function(post){
       return posts.$remove(post);
     },
-    comments: function(){
+    comments: function(postId){
       return $firebase(ref.child('comments').child(postId)).$asArray();
     }
   };

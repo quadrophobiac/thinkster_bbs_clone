@@ -9,7 +9,7 @@ app.controller('PostViewCtrl', function($scope, $routeParams, Post, Auth){
   // routeParams returns the name of the database entry in Firebase
   // this id is being passed to the Post service, and its method
   $scope.comments = Post.comments($routeParams.postId);
-  console.log($scope.comments);
+  console.log("hey world");
 
   $scope.user = Auth.user;
   $scope.signedIn = Auth.signedIn;
