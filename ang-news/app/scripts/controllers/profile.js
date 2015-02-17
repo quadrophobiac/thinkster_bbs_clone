@@ -9,10 +9,19 @@ app.factory('Profile', function($window, FIREBASE_URL, $firebase, Post, $q){
 
   var profile = {
     get: function (userId) {
-      return ;
+      return $firebase(ref.child('profile').child(userId)).$asObject();
     },
     getPosts: function(userId) {
+      var defer = $q.defer();
 
+      $firebase()
+        .$asArray()
+        .$loaded()
+        .$then(function(data) {
+
+        });
+
+      return defer.promise;
     }
   };
 
