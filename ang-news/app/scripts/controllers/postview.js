@@ -5,8 +5,9 @@
 
 app.controller('PostViewCtrl', function($scope, $routeParams, Post, Auth){
   $scope.post = Post.get($routeParams.postId);
+  console.log($scope.post);
   $scope.comments = Post.comments($routeParams.postId);
-
+  console.log($scope.comments);
   $scope.user = Auth.user;
   $scope.signedIn = Auth.signedIn;
   console.log("on a page controlled by PostViewCtrl");
