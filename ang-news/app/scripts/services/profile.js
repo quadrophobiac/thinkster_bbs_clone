@@ -17,7 +17,7 @@ app.factory('Profile', function($window, FIREBASE_URL, $firebase, Post, $q){
       $firebase(ref.child('user_posts').child(userId))
         .$asArray()
         .$loaded()
-        .$then(function(data) {
+        .then(function(data) {
           var posts = {};
 
           for(var i=0; i<data.length; i++){

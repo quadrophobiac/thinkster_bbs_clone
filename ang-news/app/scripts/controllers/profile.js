@@ -8,6 +8,7 @@ app.controller('ProfileCtrl', function($scope, $routeParams, Profile){
 
   $scope.profile = Profile.get(uid);
   Profile.getPosts(uid).then(function(posts){
+    console.log(posts);
     $scope.posts = posts;
   });
 
